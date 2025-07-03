@@ -8,7 +8,7 @@ const app = express();
 
 // ✅ 2. CORS: allow only Netlify frontend
 app.use(cors({
-  origin: ["https://graceful-genie-17ae33.netlify.app/"], // array form
+  origin: "*", // DANGER: Do NOT use in production. For temporary debugging ONLY.
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
   credentials: true
