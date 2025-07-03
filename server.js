@@ -8,8 +8,12 @@ const app = express();
 
 // ✅ 2. CORS: allow only Netlify frontend
 app.use(cors({
-  origin: "https://rainbow-sunshine-4d0502.netlify.app/"
+  origin: ["https://rainbow-sunshine-4d0502.netlify.app"], // array form
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
 }));
+
 
 app.use(express.json());
 
